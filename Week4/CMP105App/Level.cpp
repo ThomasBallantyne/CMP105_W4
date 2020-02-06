@@ -18,6 +18,12 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 	goomba.setOrigin(sf::Vector2f(25, 25));
 	goomba.setPosition(sf::Vector2f(50, 50));
 
+	goomba1.setTexture(&texture1);
+	goomba1.setSize(sf::Vector2f(50, 50));
+	goomba1.setOrigin(sf::Vector2f(25, 25));
+	goomba1.setPosition(sf::Vector2f(500, 500));
+	goomba1.coord = sf::Vector2f(500, 500);
+
 	mushroom.setTexture(&texture);
 	mushroom.setSize(sf::Vector2f(50, 50));
 	mushroom.setPosition(sf::Vector2f(0, 0));
@@ -50,7 +56,9 @@ void Level::update(float dt)
 {
 	mushroom.update(dt);
 	goomba.update(dt);
+	goomba1.update(dt);
 	goomba.setPosition(goomba.coord);
+	goomba1.setPosition(goomba1.coord);
 }
 
 // Render level
@@ -61,6 +69,7 @@ void Level::render()
 	window->draw(testSprite);
 	window->draw(mushroom);
 	window->draw(goomba);
+	window->draw(goomba1);
 
 	endDraw();
 }

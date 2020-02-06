@@ -31,6 +31,7 @@ private:
 	GameObject testSprite;
 	Player mushroom;
 	Enemy goomba;
+	Enemy goomba1;
 	sf::Texture texture;
 	sf::Texture texture1;
 
