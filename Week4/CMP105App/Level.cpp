@@ -19,12 +19,14 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 	goomba.setSize(sf::Vector2f(50, 50));
 	goomba.setOrigin(sf::Vector2f(25, 25));
 	goomba.setPosition(sf::Vector2f(50, 50));
+	goomba.setWindow(window);
 
 	goomba1.setTexture(&texture1);
 	goomba1.setSize(sf::Vector2f(50, 50));
 	goomba1.setOrigin(sf::Vector2f(25, 25));
 	goomba1.setPosition(sf::Vector2f(500, 500));
 	goomba1.coord = sf::Vector2f(200, 200);
+	goomba1.setWindow(window);
 
 	mushroom.setTexture(&texture);
 	mushroom.setSize(sf::Vector2f(50, 50));
@@ -38,7 +40,9 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 
 	background.setTexture(&texture3);
 	background.setSize(background.size);
+	background.setWindow(window);
 	background.setInput(input);
+
 }
 
 Level::~Level()

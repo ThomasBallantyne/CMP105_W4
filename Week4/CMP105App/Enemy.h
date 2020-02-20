@@ -16,6 +16,7 @@ public:
 	float angle;
 
 	void update(float dt) override;
+	void setWindow(sf::RenderWindow* hwnd) { window = hwnd; };
 
 protected:
 	sf::RenderWindow* window;

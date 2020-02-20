@@ -13,6 +13,5 @@ public:
 
 	void handleInput(float dt) override;
 	void update(float dt) override;
-
 };
 

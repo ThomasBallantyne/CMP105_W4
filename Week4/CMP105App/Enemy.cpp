@@ -30,7 +30,7 @@ void Enemy::update(float dt)
 		}
 		coord.x = 25;
 	}
-	if (coord.x > (1200 - 25))
+	if (coord.x > (window->getSize().x - 25))
 	{
 		if (angle <= 90)
 		{
@@ -61,7 +61,7 @@ void Enemy::update(float dt)
 		}
 		coord.y = 25;
 	}
-	if (coord.y > (675 - 25))
+	if (coord.y > (window->getSize().y - 25))
 	{
 		if (angle <= 270)
 		{
