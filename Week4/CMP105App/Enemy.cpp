@@ -2,7 +2,10 @@
 
 Enemy::Enemy()
 {
-
+	speed = 100;
+	angle = 45; 
+	speed1.x = 70.71;
+	speed1.y = 70.71;
 }
 
 Enemy::~Enemy()
@@ -77,4 +80,5 @@ void Enemy::update(float dt)
 	distance1.x = speed1.x * dt;
 	distance1.y = speed1.y * dt;
 	coord += distance1;
+	Enemy::setPosition(coord);
 }

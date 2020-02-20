@@ -2,8 +2,9 @@
 
 Player::Player() 
 {
-	
+	speed = 100;
 }
+
 Player::~Player() 
 {
 
@@ -29,6 +30,8 @@ void Player::handleInput(float dt)
 	{
 		coord.x += distance;
 	}
+
+	Player::setPosition(coord);
 }
 
 void Player::update(float dt)

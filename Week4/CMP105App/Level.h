@@ -1,10 +1,11 @@
 #pragma once
-
 #include <SFML/Graphics.hpp>
 #include "Framework/Input.h"
 #include "Framework/GameObject.h"
 #include "Player.h"
 #include "Enemy.h"
+#include "Cursor.h"
+#include "Background.h"
 #include <string.h>
 #include <iostream>
 
@@ -32,7 +33,11 @@ private:
 	Player mushroom;
 	Enemy goomba;
 	Enemy goomba1;
+	Background background;
+	Cursor cursor;
 	sf::Texture texture;
 	sf::Texture texture1;
+	sf::Texture texture2;
+	sf::Texture texture3;
 
 };

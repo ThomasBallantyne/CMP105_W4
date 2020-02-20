@@ -1,13 +1,13 @@
 #pragma once
 #include "Framework/GameObject.h"
-class Player: public GameObject 
+class Background: public GameObject
 {
 public:
 
-	Player();
-	~Player();
+	Background();
+	~Background();
 
-	sf::Vector2f coord = sf::Vector2f(0, 0);
+	sf::Vector2f size;
 	float distance;
 	float speed;
 

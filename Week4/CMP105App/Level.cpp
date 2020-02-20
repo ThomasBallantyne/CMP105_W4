@@ -8,6 +8,8 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 	// initialise game objects
 	texture.loadFromFile("gfx/Mushroom.png");
 	texture1.loadFromFile("gfx/Goomba.png");
+	texture2.loadFromFile("gfx/icon.png");
+	texture3.loadFromFile("gfx/Level1_1.png");
 
 	testSprite.setTexture(&texture);
 	testSprite.setSize(sf::Vector2f(100, 100));
@@ -22,12 +24,21 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 	goomba1.setSize(sf::Vector2f(50, 50));
 	goomba1.setOrigin(sf::Vector2f(25, 25));
 	goomba1.setPosition(sf::Vector2f(500, 500));
-	goomba1.coord = sf::Vector2f(500, 500);
+	goomba1.coord = sf::Vector2f(200, 200);
 
 	mushroom.setTexture(&texture);
 	mushroom.setSize(sf::Vector2f(50, 50));
 	mushroom.setPosition(sf::Vector2f(0, 0));
 	mushroom.setInput(input);
+
+	cursor.setTexture(&texture2);
+	cursor.setSize(sf::Vector2f(25, 25));
+	cursor.setInput(input);
+	window->setMouseCursorVisible(false);
+
+	background.setTexture(&texture3);
+	background.setSize(background.size);
+	background.setInput(input);
 }
 
 Level::~Level()
@@ -47,7 +58,7 @@ void Level::handleInput(float dt)
 	//Now that I dealth with my inputs, I will tell 
 	//player and other classes who needs input to update themselves
 	mushroom.handleInput(dt);
-	mushroom.setPosition(mushroom.coord);
+	background.handleInput(dt);
 
 }
 
@@ -57,8 +68,8 @@ void Level::update(float dt)
 	mushroom.update(dt);
 	goomba.update(dt);
 	goomba1.update(dt);
-	goomba.setPosition(goomba.coord);
-	goomba1.setPosition(goomba1.coord);
+	cursor.update(dt);
+	background.update(dt);
 }
 
 // Render level
@@ -66,10 +77,12 @@ void Level::render()
 {
 	beginDraw();
 
+	window->draw(background);
 	window->draw(testSprite);
 	window->draw(mushroom);
 	window->draw(goomba);
 	window->draw(goomba1);
+	window->draw(cursor);
 
 	endDraw();
 }
