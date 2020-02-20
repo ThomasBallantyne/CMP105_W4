@@ -26,6 +26,7 @@ void Background::handleInput(float dt)
 	{
 		view.move(-distance, 0);
 	}
+	window->setView(view);
 }
 
 void Background::update(float dt)
